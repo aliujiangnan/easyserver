@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+
+package rpc;   
+
+service rpc {  
+    rpc RpcStream(stream W2BMSG) returns (stream B2WMSG) {}
+}
+
+message W2BMSG {
+    uint32 type = 1;
+    string msg = 2;
+}
+
+message B2WMSG {
+    string msg = 1;
+}
